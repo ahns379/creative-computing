@@ -1,0 +1,44 @@
+<apartment>
+	<front-door>
+
+	<floors>
+
+		<elevator>
+
+		<apartment-houses>
+
+			<bedrooms>
+				<bed>
+					<bed-sheet>
+					<pillows>
+					<covers>
+				</bed>
+
+				<closet>
+					<shirts>
+					<pants>
+					<belts>
+					<socks>
+					<under-garments>
+				</closet>
+
+				<small-desk>
+					<desk-lamp>
+					<phone-charger>
+				</small-desk>
+			</bedrooms>
+
+			<bathroom>
+				<sink>
+				<toliet>
+				<shower-stall>
+					<shower-head>
+					<shampoo>
+					<body-wash>
+				</shower-stall>
+				<soap>
+			</bathroom>
+
+		</apartment-houses>
+	</floors>
+</apartment>
