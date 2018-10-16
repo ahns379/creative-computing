@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	
+	html{
+		height:100%;
+	}
+	
+	body{
+		margin: 0;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+	}
+
+	@keyframes move{
+		from {
+   			margin-left: 84%;
+  		}
+  		to {
+   			margin-left: 0%;
+ 			 }
+		}
+
+	@keyframes opp{
+		from {
+   			margin-left: 0%;
+  		}
+  		to {
+   			margin-left: 83%;
+ 			 }
+		}
+
+	@keyframes colorchange {
+    	from {background-color: #29438a;}
+    	to {background-color: #f7ea70;}
+	}
+	
+	@keyframes colorchange2 {
+    	from {background-color: #f7ea70;}
+    	to {background-color: #29438a;}
+	}
+
+	#top-box{
+		background-color: #64afc6;
+		width: 60vmin;
+		height: 23vmin;
+		display: flex;
+	}
+
+	#square1{
+		animation: move 3s alternate infinite;
+		background-color: #c4845b;
+		height: 8vmin;
+		width: 10vmin;
+		margin-left: 40%;
+		margin-top: 25%;
+
+	}
+
+	#second-box{
+		animation: colorchange 3s alternate infinite;
+		background-color: #29438a;
+		width: 60vmin;
+		height: 13vmin;
+	}
+
+	#third-box{
+		animation: colorchange2 3s alternate infinite;
+		background-color: #f7ea70;
+		width: 60vmin;
+		height: 13vmin;
+	}
+
+	#bottom-box{
+		background-color: #e58a47;
+		width: 60vmin;
+		height: 23vmin;
+	}
+
+	#square2{
+		animation: opp 3s alternate infinite;
+		margin-left: 40%;
+		height: 8vmin;
+		width: 10vmin;
+		background-color: #c5825c;
+	}
+
+	</style>
+</head>
+<body>
+	<div id="top-box">
+		<div id="square1"></div>
+	</div>
+
+	<div id="second-box"></div>
+
+	<div id="third-box"></div>
+
+	<div id="bottom-box">
+		<div id="square2"></div>
+	</div>
+
+</body>
+</html>
