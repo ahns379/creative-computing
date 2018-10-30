@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	html,body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		background-color: #FCBF24;
+	}
+	h1{
+		font-size: 15vmin;
+		font-family: Arial, Helvetica, sans-serif;
+		font-style: italic;
+
+	}
+	</style>
+</head>
+<body>
+	<h1 id= "fruits"></h1>
+	<script> 
+		var choices = [ "apple",
+				        "apricot",
+				        "avocado",
+				        "banana",
+				        "bell pepper",
+				        "bilberry",
+				        "blackberry",
+				        "blackcurrant",
+				        "blood orange",
+				        "blueberry",
+				        "boysenberry",
+				        "breadfruit",
+				        "canary melon",
+				        "cantaloupe",
+				        "cherimoya",
+				        "cherry",
+				        "chili pepper",
+				        "clementine",
+				        "cloudberry",
+				        "coconut",
+				        "cranberry",
+				        "cucumber",
+				        "currant",
+				        "damson",
+				        "date",
+				        "dragonfruit",
+				        "durian",
+				        "eggplant",
+				        "elderberry",
+				        "feijoa",
+				        "fig",
+				        "goji berry",
+				        "gooseberry",
+				        "grape",
+				        "grapefruit",
+				        "guava",
+				        "honeydew",
+				        "huckleberry",
+				        "jackfruit",
+				        "jambul",
+				        "jujube",
+				        "kiwi fruit",
+				        "kumquat",
+				        "lemon",
+				        "lime",
+				        "loquat",
+				        "lychee",
+				        "mandarine",
+				        "mango",
+				        "mulberry",
+				        "nectarine",
+				        "nut",
+				        "olive",
+				        "orange",
+				        "pamelo",
+				        "papaya",
+				        "passionfruit",
+				        "peach",
+				        "pear",
+				        "persimmon",
+				        "physalis",
+				        "pineapple",
+				        "plum",
+				        "pomegranate",
+				        "pomelo",
+				        "purple mangosteen",
+				        "quince",
+				        "raisin",
+				        "rambutan",
+				        "raspberry",
+				        "redcurrant",
+				        "rock melon",
+				        "salal berry",
+				        "satsuma",
+				        "star fruit",
+				        "strawberry",
+				        "tamarillo",
+				        "tangerine",
+				        "tomato",
+				        "ugli fruit",
+				        "watermelon"  ];
+
+    	var number = Math.random() * 79;
+    	var integer = parseInt(number);
+
+    	document.getElementById("fruits").innerHTML = "Gimmie my " + choices[integer] + " :).";
+
+	</script>
+
+</body>
+</html>
