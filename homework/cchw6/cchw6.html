@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style> 
+#outerbox{
+	width:80vmin;
+	height:58vmin;
+	border-radius: 25px;
+	background-color: gray;
+	margin-left: 45vmin;
+	margin-top: 25vmin;
+	display: flex;
+}
+
+#innerbox{
+	width:76vmin;
+	height:50vmin;
+	border-radius: 30px;
+	background-color: white;
+	margin-left: 2vmin;
+	margin-top: 1vmin;
+
+}
+
+#line1{
+	width:1vmin;
+	height:25vmin;
+	border-radius: 30px;
+	background-color: black;
+	margin-left: 95vmin;
+	margin-top: -79vmin;
+	transform: rotate(45deg);
+	position: relative;
+}
+
+#line2{
+	width:1vmin;
+	height:25vmin;
+	border-radius: 30px;
+	background-color: black;
+	margin-left: 75vmin;
+	margin-top: -25vmin;
+	transform: rotate(135deg);
+	position: relative;
+}
+
+img{
+	margin-left: 47vmin;
+	margin-top: -3vmin;
+	position: relative;
+	border-radius: 30px;
+	width: 76vmin;
+	height: 50vmin;
+}
+
+</style>
+<body>
+	<div id="outerbox">
+		<div id="innerbox"></div>
+	</div>
+	<div id="line1"></div>
+	<div id="line2"></div>
+	<img src="gifs/1.gif" id = "gifs">
+	<p id="number"></p>
+
+<script>
+	var channels =  document.getElementById('gifs');
+	var gifsArray = ["gifs/1.gif", 
+					"gifs/2.gif", 
+					"gifs/3.gif", 
+					"gifs/4.gif", 
+					"gifs/5.gif", 
+					"gifs/6.gif", 
+					"gifs/7.gif", 
+					"gifs/8.gif", 
+					"gifs/9.gif", 
+					"gifs/10.gif"];
+
+	var ArrayIndex = 1;
+	document.addEventListener('keydown', function changeImage(event) {
+        channels.setAttribute("src", gifsArray[ArrayIndex]);
+		if (event.keyCode == 38) {
+			ArrayIndex++;
+		}
+		if (event.keyCode == 40) {
+			ArrayIndex--;
+		}
+        if(ArrayIndex >= 9) {
+        	ArrayIndex = 0;
+		}
+		if(ArrayIndex < 0) {
+			ArrayIndex = 9;
+		}
+    });
+
+</script>
+</body>
+</html>
