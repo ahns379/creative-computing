@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="file" id="open-file">
+<h1 id="poem"></h1>
+<h2 id="koreanwords"> </h2>
+<style>
+h1,h2{
+	position: absolute;
+	font-size: 2.5vh;
+	text-align: center;
+	list-style-type: none;
+	padding-left: 35%;
+	padding-right: 35%;
+	padding-top: 25%;
+
+}
+</style>
+<script>
+
+var reader = new FileReader();
+
+document.getElementById("open-file").onchange = function(){
+	reader.readAsText(this.files[0]);
+}
+
+reader.onload = function(event){
+	buildDictionary(event.target.result);
+	markov();
+}
+
+var dictionary = {};
+function buildDictionary(text){
+
+	var words = text.split(/\s+/);
+
+	var i = 0;
+	while(i < words.length-1){
+		var thisword = words[i];
+		var nextword = words[i+1];
+		
+		if(dictionary[thisword] == undefined){
+			dictionary[thisword] = [];
+		}
+		dictionary[thisword].push(nextword);
+
+		i++;
+	}
+	// console.log(dictionary);
+}
+
+function randomInt(max){
+	return parseInt(Math.random() * max);
+}
+
+function markov(){
+	var keys = Object.keys(dictionary);
+	var firstword = keys[randomInt(keys.length)];
+
+	var words = [firstword];
+
+	//loop start
+	var counter = 0;
+	while(counter < 50){
+		var thisword = words[words.length - 1];
+		var nextwordarray = dictionary[thisword];
+		var nextword = nextwordarray[randomInt(nextwordarray.length)];
+		words.push(nextword);
+		counter++;
+	}
+	console.log(words);
+	//loop end 
+
+	var poem = words.join(" ");
+	// document.getElementById("poem").innerHTML = poem;
+
+	var choices = ["이게",
+						"이",
+						"이별을",
+						"이별이",
+						"이젠",
+						"이젠",
+						"이별은",
+						"이제",
+						"이",
+						"이상에",
+						"이",
+						"이만",
+						"이런",
+						"이래야했어",
+						"이래야만",
+						"이래야만",
+						"이렇게",
+						"이러면",
+						"이제",
+						"이러니",
+						"이러면",
+						"이렇게",
+						"이제",
+						"이별로",
+						"이젠",
+						"이별도",
+						"이렇게",
+						"이젠",
+						"이젠",
+						"이야기를",
+						"이",
+						"이게",
+						"이별을",
+						"이별이",
+						"이젠",
+						"이젠",
+						"이별은",
+						"이제",
+						"이",
+						"이상에",
+						"이",
+						"이만",
+						"이런",
+						"이래야했어",
+						"이래야만",
+						"이래야만",
+						"이렇게",
+						"이러면",
+						"이제",
+						"이러니",
+						"이러면",
+						"이렇게",
+						"이제",
+						"이별로",
+						"이젠",
+						"이별도",
+						"이렇게",
+						"이젠",
+						"이젠",
+						"이야기를",
+						"이",
+						"이게",
+						"이",
+						"이",
+						"이",
+						"이",
+						"이",
+						"이",
+						"이별을",
+						"이별이",
+						"이젠",
+						"이젠",
+						"이별은",
+						"이제",
+						"이",
+						"이상에",
+						"이",
+						"이만",
+						"이런",
+						"이래야했어",
+						"이래야만",
+						"이래야만",
+						"이렇게",
+						"이러면",
+						"이제",
+						"이러니",
+						"이러면",
+						"이렇게",
+						"이제"];
+
+	var number = Math.random() * 88;
+    	var integer = parseInt(number);
+
+    	document.getElementById("koreanwords").innerHTML = choices[integer] + "..." 
+    	+ poem;
+
+}
+
+</script>
+</body>
+</html>
